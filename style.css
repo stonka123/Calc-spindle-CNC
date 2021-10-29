@@ -34,7 +34,8 @@ body {
 }
 .app-body {
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -80,6 +81,13 @@ button {
 }
 button:focus {
 	outline: none;
+}
+.error-info {
+	visibility: hidden;
+	color: red;
+	margin-top: 30px;
+	font-size: 34px;
+	text-transform: uppercase;
 }
 .wrapper .spindle-info {
 	/* display: block; */
