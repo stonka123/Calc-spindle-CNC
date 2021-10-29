@@ -4,27 +4,51 @@
 	margin: 0;
 }
 
+[data-mode='light'] {
+	--bg-color: rgb(221, 219, 219);
+	--wrapper-color: rgb(221, 218, 218);
+	--text-color: #333;
+	--link-color: #06e;
+	--btn-color: #333;
+	--error-color: #ec1a24;
+	--score-color: rgb(214, 0, 0);
+	--border-color: rgba(214, 122, 122, 0.273);
+	--box-shadow-color: rgba(218, 88, 88, 0.135);
+}
+
+[data-mode='dark'] {
+	--bg-color: #333;
+	--heading-color: rgb(131, 60, 60);
+	--text-color: #ddd;
+	--link-color: rgb(86, 124, 103);
+	--btn-color: #ddd;
+	--error-color: #ec1a24;
+	--score-color: rgb(214, 0, 0);
+	--border-color: #ddd;
+	--box-shadow-color: rgb(196, 218, 189);
+}
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	font-family: 'Montserrat', sans-serif;
-	background-color: #2d3242;
+	background-color: var(--bg-color);
 }
 
 .wrapper {
+	position: absolute;
 	padding: 50px;
 	width: 800px;
-	background-image: linear-gradient(45deg, #31363b, #818486);
-	color: #fff;
+	background-color: var(--wrapper-color);
+	color: var(--text-color);
 	text-align: center;
-	border: 1px solid #1c232d;
+	border: 2px solid var(--border-color);
 	border-radius: 15px;
-	box-shadow: 0 0 15px #1c232d;
+	box-shadow: 0 0 15px var(--box-shadow-color);
 }
 .wrapper h1 {
-	font-size: 40px;
+	font-size: 32px;
 	margin-bottom: 20px;
 }
 .wrapper p {
@@ -34,7 +58,6 @@ body {
 }
 .app-body {
 	display: flex;
-	/* justify-content: center; */
 	justify-content: space-around;
 	align-items: center;
 }
@@ -47,7 +70,7 @@ body {
 }
 .app-body input,
 .app-body select {
-	color: #fff;
+	color: var(--text-color);
 	border: none;
 	background: none;
 	text-align: center;
@@ -56,6 +79,7 @@ body {
 	padding: 10px 20px;
 	font-size: 28px;
 	cursor: pointer;
+	background: var(--bg-color);
 }
 .app-body input {
 	font-size: 28px;
@@ -64,17 +88,18 @@ body {
 .app-body input:focus,
 .app-body select:focus {
 	outline: none;
-	color: #fff;
+	color: var(--text-color);
 }
 .app-body option {
-	color: #333;
+	color: var(--text-color);
 }
 button {
 	margin-top: 25px;
 	padding: 10px 50px;
 	font-size: 22px;
-	background-image: linear-gradient(45deg, #b4b4b4, #b6b6b6);
-	color: #2d3242;
+	background: var(--text-color);
+
+	color: var(--bg-color);
 	border: none;
 	border-radius: 8px;
 	cursor: pointer;
@@ -84,7 +109,7 @@ button:focus {
 }
 .error-info {
 	visibility: hidden;
-	color: red;
+	color: var(--error-color);
 	margin-top: 30px;
 	font-size: 34px;
 	text-transform: uppercase;
@@ -98,5 +123,59 @@ button:focus {
 .wrapper .spindle-info .spindle-rate {
 	font-weight: bold;
 	font-size: 36px;
-	color: tomato;
+	color: var(--error-color);
+}
+
+/* toogle */
+
+.checkbox {
+	opacity: 0;
+	position: relative;
+}
+
+.label {
+	top: -155px;
+	left: 655px;
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 25px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+.fa-moon {
+	color: #cfcbbb;
+}
+
+.fa-sun {
+	color: #706f6e;
+}
+/* USTAWCI */
+.toggle {
+	background-color: var(--bg-color);
+}
+.toggle .wrapper {
+	color: red;
 }
