@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html lang="pl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Kalkulator obrotów dla wierteł HSS</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@200;400;700&display=swap"
-			rel="stylesheet"
-		/>
-		<script
-			src="https://kit.fontawesome.com/ce63988251.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body data-mode="light">
-		<div class="wrapper">
-			<div class="header">
-				<h1>Kalkulator obrotów wierteł HSS</h1>
-				<p>Dobierz najlepsze parametry do obróbki!</p>
-			</div>
-			<div>
-				<input type="checkbox" class="checkbox" id="toggleMode" />
-				<label class="label" for="toggleMode">
-					<i class="fas fa-moon"></i>
-					<i class="fas fa-sun"></i>
-					<div class="ball"></div>
-				</label>
-			</div>
-			<div class="app-body">
-				<div class="section-left">
-					<input
-						type="number"
-						class="spindle"
-						placeholder="Wpisz srednicę wiertła"
-					/>
-				</div>
-				<div class="section-right">
-					<select id="material">
-						<option value="1">STAL</option>
-						<option value="2.2">TWORZYWO</option>
-						<option value="1.7">ALUMINIUM</option>
-					</select>
-				</div>
-			</div>
-			<button>Oblicz</button>
-			<p class="error-info">Wpisz odpowiednią średnicę wiertła!</p>
 
-			<p class="spindle-info">
-				Optymalne obroty to: <span class="spindle-rate"></span>
-			</p>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Kalkulator obrotów dla wierteł HSS</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@200;400;700&display=swap"
+		rel="stylesheet" />
+	<script src="https://kit.fontawesome.com/ce63988251.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-mode="light">
+	<div class="wrapper">
+		<div class="header">
+			<h1>Kalkulator obrotów wierteł HSS</h1>
+			<p>Dobierz najlepsze parametry do obróbki!</p>
 		</div>
-		<script src="script.js"></script>
-	</body>
+		<div>
+			<input type="checkbox" class="checkbox" id="toggleMode" />
+			<label class="label" for="toggleMode">
+				<i class="fas fa-moon"></i>
+				<i class="fas fa-sun"></i>
+				<div class="ball"></div>
+			</label>
+		</div>
+		<div class="app-body">
+			<div class="section-left">
+				<input type="number" class="spindle" placeholder="Wpisz srednicę wiertła" />
+			</div>
+			<div class="section-right">
+				<select id="material">
+					<option value="1">STAL</option>
+					<option value="2.2">TWORZYWO</option>
+					<option value="1.7">ALUMINIUM</option>
+				</select>
+			</div>
+		</div>
+		<button>Oblicz</button>
+		<p class="error-info">Wpisz odpowiednią średnicę wiertła!</p>
+		<p class="spindle-info">
+			Optymalne obroty to: <span class="spindle-rate"></span>
+		</p>
+	</div>
+	<script src="script.js"></script>
+</body>
+
 </html>

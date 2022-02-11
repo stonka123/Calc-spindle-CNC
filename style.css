@@ -125,9 +125,7 @@ button:focus {
 	font-size: 36px;
 	color: var(--error-color);
 }
-
 /* toogle */
-
 .checkbox {
 	opacity: 0;
 	position: relative;
